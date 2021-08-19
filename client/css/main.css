@@ -1,0 +1,29 @@
+/* start upper bar */
+.upper-bar {
+    background-color: #000;
+    height: 15px;
+  }
+  /* end upper bar */
+  /* start navbar */
+  .bg-light {
+    background-color: #f3e9f1 !important;
+  }
+  img {
+    width: 160px;
+    box-shadow: 0px 3px 4px 0px;
+  }
+  .dropdown-toggle::after {
+    display: none;
+  }
+  
+  .fa-shopping-bag,
+  .fa-question-circle,
+  .fa-user {
+    font-size: 20px;
+    color: #000;
+  }
+  .nav-item {
+    box-shadow: 0px 3px 4px 0px;
+
+  }
+  /* end navbar */
