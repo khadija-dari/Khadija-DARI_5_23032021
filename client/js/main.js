@@ -31,6 +31,7 @@ fetch(url).then((Response) =>
       });
     }
     function panierNum(product) {
+      // console.log("bonjour", product);
       let productNum = localStorage.getItem("panierNum");
       productNum = parseInt(productNum);
       if (productNum) {
@@ -41,6 +42,7 @@ fetch(url).then((Response) =>
         localStorage.setItem("panierNum", 1);
         document.querySelector(".nav-link span").textContent = 1;
       }
+      setItems(product);
     }
     function onloadpanierNum() {
       let productNum = localStorage.getItem("panierNum");
@@ -49,5 +51,25 @@ fetch(url).then((Response) =>
       }
     }
     onloadpanierNum();
+
+    function setItems(product) {
+      let panierItems = localStorage.getItem("article");
+      panierItems = JSON.parse(panierItems);
+      if (panierItems != null) {
+        if (panierItems[product.name] == undefined) {
+          panierItems = {
+            ...panierItems,
+            [product.name]: product,
+          };
+        }
+        panierItems[product.name]._id += 1;
+      } else {
+        product._id = 1;
+        panierItems = {
+          [product.name]: product,
+        };
+      }
+      localStorage.setItem("article", JSON.stringify(panierItems));
+    }
   })
 );
