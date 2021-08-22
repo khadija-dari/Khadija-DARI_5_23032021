@@ -15,7 +15,7 @@ fetch(url).then((Response) =>
               <img src=${product.imageUrl} class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">${product.name}</h5>
-                <p class="card-text">${product.price}€</p>
+                <p class="card-text">${product.price / 100}€</p>
                 <button type="button" class="btn btn-primary btn-sm">Description</button>
                 <button type="button" class="btn btn-secondary btn-sm add-cart">Ajouter au panier</button>
               </div>
@@ -28,15 +28,14 @@ fetch(url).then((Response) =>
     for (let i = 0; i < panier.length; i++) {
       panier[i].addEventListener("click", () => {
         panierNum(product[i]);
+        totalCost(product[i]);
       });
     }
     function panierNum(product) {
-      // console.log("bonjour", product);
       let productNum = localStorage.getItem("panierNum");
       productNum = parseInt(productNum);
       if (productNum) {
         localStorage.setItem("panierNum", productNum + 1);
-        console.log("panierNum");
         document.querySelector(".nav-link span").textContent = productNum + 1;
       } else {
         localStorage.setItem("panierNum", 1);
@@ -70,6 +69,15 @@ fetch(url).then((Response) =>
         };
       }
       localStorage.setItem("article", JSON.stringify(panierItems));
+    }
+    function totalCost(product) {
+      let panierCost = localStorage.getItem("totalCost");
+      if (panierCost != null) {
+        panierCost = parseInt(panierCost);
+        localStorage.setItem("totalCost", panierCost + product.price / 100);
+      } else {
+        localStorage.setItem("totalCost", product.price / 100);
+      }
     }
   })
 );
