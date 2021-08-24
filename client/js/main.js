@@ -17,7 +17,7 @@ function mainFunction() {
                 <div class="card-body">
                   <h5 class="card-title">${product.name}</h5>
                   <p class="card-text">${product.price / 100}€</p>
-                  <button type="button" class="btn btn-primary btn-sm">Description</button>
+                 <a href="pages/description.html"> <button type="button" class="btn btn-primary btn-sm">Description</button></a>
                   <button type="button" class="btn btn-secondary btn-sm add-cart">Ajouter au panier</button>
                 </div>
               </div>
