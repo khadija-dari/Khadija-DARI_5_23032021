@@ -5,12 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Orinoco</title>
-    <link rel="stylesheet" href="css/all.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/main.css" />
-
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/all.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/main.css" />
   </head>
   <body>
     <!-- upper bar -->
@@ -19,8 +16,8 @@
     <!-- start navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
-        <a class="navbar-brand" href="index.html"
-          ><img src="imgs/img-1.png" alt=""
+        <a class="navbar-brand" href="../index.html"
+          ><img src="../imgs/img-1.png" alt=""
         /></a>
         <button
           class="navbar-toggler"
@@ -46,7 +43,7 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="html/panier.html">
+              <a class="nav-link" href="#">
                 Aide <i class="far fa-question-circle"></i
               ></a>
             </li>
@@ -56,11 +53,33 @@
     </nav>
     <!-- end navbar -->
     <!-- start section -->
-    <section class="global-search">
-      <h1 class="text-center">Teddies</h1>
-      <div class="row row-cols-1 row-cols-md-2 g-4" id="main_container"></div>
+    <section id="panier_main_container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" class="product">Article(s)</th>
+            <th scope="col" class="price">Prix unitaire</th>
+            <th scope="col" class="quantity">Quantité</th>
+            <th scope="col" class="total">Prix total</th>
+            <th scope="col" class="trash-alt">
+              <i class="fas fa-trash-alt"></i>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" id="th_product"></th>
+            <td id="td_price"></td>
+            <td id="td_quantity"></td>
+            <td id="td_total"></td>
+            <td id="close"><i class="fas fa-window-close"></i></td>
+          </tr>
+        </tbody>
+      </table>
     </section>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/panier.js" type="module"></script>
     <!-- end section -->
-    <script src="js/main.js" type="module"></script>
   </body>
 </html>
