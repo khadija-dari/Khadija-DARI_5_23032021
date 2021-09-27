@@ -58,6 +58,7 @@
         <thead>
           <tr>
             <th scope="col" class="product">Article(s)</th>
+            <th scope="col" class="option">Option</th>
             <th scope="col" class="price">Prix unitaire</th>
             <th scope="col" class="quantity">Quantité</th>
             <th scope="col" class="total">Prix total</th>
@@ -66,19 +67,16 @@
             </th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <th scope="row" id="th_product"></th>
-            <td id="td_price"></td>
-            <td id="td_quantity"></td>
-            <td id="td_total"></td>
-            <td id="close"><i class="fas fa-window-close"></i></td>
-          </tr>
-        </tbody>
+        <tbody id="articles"></tbody>
+        <tfoot>
+          <td colspan="4">Total</td>
+          <td id="totalPrice"></td>
+        </tfoot>
       </table>
     </section>
     <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/fonction.js"></script>
     <script src="../js/panier.js" type="module"></script>
     <!-- end section -->
   </body>
